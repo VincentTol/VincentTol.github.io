@@ -8,7 +8,10 @@ function App() {
       <div className='regTitle'>I'm a junior Computer Science student at the University of Florida</div>
       <div style={{ margin: '100px' }}> </div>
       <div className='regTitle'>What I've been working On...</div>
-      <p>sdfsadfsdfasdfasdfasdfasfd</p>
+      <p>React</p>
+      <p>MySQL</p>
+      <p>Pandas/Numpy/SciKit</p>
+      <p>Web Development</p>
       <div></div>
     </div>
   )
