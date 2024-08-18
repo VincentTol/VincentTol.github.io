@@ -12,6 +12,7 @@ function App() {
       <p>MySQL</p>
       <p>Pandas/Numpy/SciKit</p>
       <p>Web Development</p>
+      <p>More</p>
       <div></div>
     </div>
   )
