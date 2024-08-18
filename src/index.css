@@ -1,13 +1,28 @@
+
+/* index.css */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #a9d3e0, #7d8fc9);
+  font-family: Arial, sans-serif;
+  color: rgb(61, 64, 66)
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-size: 2vw; /* Responsive font size */
 }
+
+.nameTitle {
+  font-size: 3rem;
+}
+
+.regTitle {
+  font-size: 2rem;
+}
+
+
