@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: linear-gradient(to bottom, #a9d3e0, #7d8fc9);
+  background: white;
   font-family: Arial, sans-serif;
   color: rgb(61, 64, 66);
 }
@@ -41,10 +41,10 @@ body {
 }
 
 .projectObject {
-  height: 20rem;
-  width: 20rem;
-  margin: 2rem;
-  background-color: azure;
+  height: 10rem;
+  width: 10rem;
+  margin: 0.5rem;
+  background-color: #d7d7d7;
   border-radius: 3rem;
   justify-content: center;
   overflow: hidden;
@@ -57,7 +57,7 @@ body {
   
   cursor: pointer;
 
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -68,6 +68,28 @@ body {
 
 header {
   padding: 30px 10%;
+  background-color: #d7d7d7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.topButton {
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  background-color: #d7d7d7;
+  padding: 20px;
+  font-weight: bold;
+
+}
+
+.topButton:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+
 }
 
 .navContainer {
@@ -75,6 +97,38 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.content-column {
+  flex: 1; /* Take equal space in the container */
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: flex-start; /* Align items to the left */
+  padding: 20px; /* Add padding inside each column */
+}
+
+.content-object {
+  margin-bottom: 20px;
+}
+
+.image-column {
+  flex: 1; /* Take equal space in the container */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  background-color: #d7d7d7; /* Background color for the image column */
 }
 
 .leftNav {
@@ -95,11 +149,4 @@ header {
   padding: 0;
 }
 
-a, p {
-  font-weight: 500;
-  font-size: 16px;
-  color: black;
-  text-decoration: none;
-  margin-left: 20px; /* Adds space between the nav items and the GitHub link */
-}
 
