@@ -2,6 +2,7 @@ function HomePage(){
     return(
     <div>
         <header>
+        <title>Vincentfolio</title>
         {/* The nav container uses space between which puts an even ammount of space between items
         the items in this case are the left nav and right nav which push those divs to the left and right ends */}
         <nav className="navContainer">
