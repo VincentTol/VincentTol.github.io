@@ -1,3 +1,5 @@
+import headshot from '../images/headshot.jpg'
+
 function HomePage(){
     return(
     <div>
@@ -13,7 +15,7 @@ function HomePage(){
                 <ul className="navLinks">
                     <li>Projects</li>
                     <li>About</li>
-                    <li>GitHub</li>
+                    <li><a href="https://github.com/VincentTol">GitHub</a></li>
                 </ul>
             </div>
         </nav>
@@ -22,11 +24,15 @@ function HomePage(){
         <div className="content-container">
             <div className="content-column">
                 <h1 className="content-object">I'm a junior Computer Science student at the University of Florida enjoying learning and creating every day</h1>
-                <p className="topButton"><a href="https://docs.google.com/document/d/14PotatEH3dJ2eddbPPSXY1aafgluxUvh/edit?usp=drive_link&ouid=105749632575768178748&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Resume</a></p>
-                <p className="topButton"><a href="https://www.linkedin.com/in/tol-vat/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                <button className="topButton" onClick={() => window.open("https://docs.google.com/document/d/14PotatEH3dJ2eddbPPSXY1aafgluxUvh/edit?usp=drive_link&ouid=105749632575768178748&rtpof=true&sd=true", "_blank")}>
+                Resume
+                </button>                
+                <button className="topButton" onClick={() => window.open("https://www.linkedin.com/in/tol-vat/", "_blank")}>
+                LinkedIn
+                </button>   
             </div>
             <div className="image-column">
-                <p>Image here</p> {/* Replace this with your actual image element */}
+                <img src = {headshot} alt= "Vincent's headshot"/> {/* Replace this with your actual image element */}
             </div>
         </div>
 
