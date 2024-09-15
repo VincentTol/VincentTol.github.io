@@ -161,6 +161,7 @@ a {
 }
 
 /*Adjust based on size of screen using queries*/
+/*Mobile*/
 
 @media only screen and (max-width: 768px) {
   .content-container {
@@ -169,7 +170,19 @@ a {
   }
 
   .image-column {
+    order: -1;
     margin-bottom: 20px; /* Add space below the image */
+  }
+
+  .content-column {
+    order: 1; /* Content goes below the image */
+    align-items: center; /* Center the content */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .content-object {
+    font-size: 1.2rem; /* Adjust text size */
   }
 }
 
