@@ -160,4 +160,18 @@ a {
   padding: 0;
 }
 
+/*Adjust based on size of screen using queries*/
+
+@media only screen and (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    padding: 10px; /* Add some padding */
+  }
+
+  .image-column {
+    margin-bottom: 20px; /* Add space below the image */
+  }
+}
+
+
 
