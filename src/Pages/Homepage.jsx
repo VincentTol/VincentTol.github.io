@@ -23,7 +23,8 @@ function HomePage(){
 
         <div className="content-container">
             <div className="content-column">
-                <h1 className="content-object">I'm a junior Computer Science student at the University of Florida enjoying learning and creating every day</h1>
+                <h1 className="content-object">Hi, I'm Vincent,
+                    a junior Computer Science student at the University of Florida enjoying learning and creating every day</h1>
                 <button className="topButton" onClick={() => window.open("https://docs.google.com/document/d/14PotatEH3dJ2eddbPPSXY1aafgluxUvh/edit?usp=drive_link&ouid=105749632575768178748&rtpof=true&sd=true", "_blank")}>
                 Resume
                 </button>                
@@ -43,7 +44,7 @@ function HomePage(){
         <div className="flexContainerRow">
             <p className="projectObject">React</p>
             <p className="projectObject">MySQL</p>
-            <p className="projectObject">Pandas/Numpy/SciKit</p>
+            <p className="projectObject">Video/Audio Communication</p>
             <p className="projectObject">Web Development</p>
         </div>
     </div>
