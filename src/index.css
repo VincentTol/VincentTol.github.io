@@ -1,190 +1,200 @@
-/* index.css */
+/* Base Styles */
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  background: white;
-  font-family: Arial, sans-serif;
-  color: rgb(61, 64, 66);
+  background: #fafafa;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #3d4042;
+  line-height: 1.6;
 }
 
-.flexContainerCol {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  font-size: 2vw;
-}
-
-.flexContainerRow {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 1.5rem;
-  gap: 20px;
-}
-
-.nameTitle {
-  font-size: 3rem;
-  background-color: white;
-  margin: 0;
-  padding: 20px;
-  width: 100%;
-
-}
-
-.regTitle {
-  font-size: 2rem;
-  text-align: center;
-}
-
-.projectObject {
-  height: 10rem;
-  width: 10rem;
-  margin: 0.5rem;
-  background-color: #d7d7d7;
-  border-radius: 3rem;
-  justify-content: center;
-  overflow: hidden;
-
-  /* Center the text */
-  display: flex;
-  align-items: center;   /* Vertical centering */
-  justify-content: center; /* Horizontal centering */
-  text-align: center;     /* Ensures multi-line text is centered */
-  
-  cursor: pointer;
-
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.projectObject:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-  
-}
-
+/* Header and Navigation */
 header {
-  padding: 30px 10%;
-  background-color: #d7d7d7;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.topButton {
-  align-self: center;
-  align-items: center;
-  text-align: center;
-  width: 70%;
-  background-color: #d7d7d7;
-  padding: 20px;
-
-  border: none;
-  font-size: large;
-
-  margin: 10px;
-}
-
-
-
-
-
-.topButton:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-  cursor: pointer;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px 10%;
+  z-index: 10;
 }
 
 .navContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 
-
-
-.content-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-  width: 80%;
-  margin: 0 auto;
+.leftNav h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #2d2d2d;
 }
 
-.content-column {
-  flex: 1; /* Take equal space in the container */
-  display: flex;
-  flex-direction: column; /* Arrange items vertically */
-  align-items: flex-start; /* Align items to the left */
-  padding: 20px; /* Add padding inside each column */
-}
-
-.content-object {
-  margin-bottom: 20px;
-}
-
-.image-column {
-  flex: 1; /* Take equal space in the container */
-  display: flex;
-  justify-content: center; /* Center the image horizontally */
-  align-items: center; /* Center the image vertically */
-  background-color: #d7d7d7; /* Background color for the image column */
-}
-
-.image-column img {
-  width: 100%
-}
-
-.leftNav {
-  display: flex;
-  align-items: center;
-}
-
-.rightNav {
-  display: flex;
-  align-items: center;
-}
-
-.navLinks {
+.rightNav ul {
   list-style: none;
   display: flex;
-  gap: 20px; /* Space between items */
+  gap: 25px;
   margin: 0;
   padding: 0;
 }
 
-/*Adjust based on size of screen using queries*/
-/*Mobile*/
+.rightNav li a {
+  color: #3d4042;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
 
+.rightNav li a:hover {
+  color: #0077ff;
+}
+
+/* Main Layout */
+.content-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 4rem 10%;
+  gap: 4rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.content-column {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.content-object {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  max-width: 550px;
+}
+
+.image-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e9ecef;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.image-column img {
+  width: 80%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Buttons */
+.topButton {
+  align-self: flex-start;
+  background-color: #0077ff;
+  color: white;
+  padding: 2rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.topButton:hover {
+  background-color: #005fd1;
+  box-shadow: 0 6px 18px rgba(0, 119, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Section Title */
+.Title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.Title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #0077ff;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+/* Experience Section */
+.content-container:nth-of-type(2) {
+  background: #f7f9fb;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Projects Section */
+.regTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  text-align: center;
+  margin: 4rem 0 2rem;
+}
+
+/* Project Tags */
+.flexContainerRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 25px;
+  padding: 0 10%;
+}
+
+.projectObject {
+  background-color: white;
+  border-radius: 1.5rem;
+  height: auto;
+  padding: 2rem 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0077ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projectObject:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 119, 255, 0.2);
+}
+
+/* Mobile */
 @media only screen and (max-width: 768px) {
   .content-container {
     flex-direction: column;
-    padding: 10px; /* Add some padding */
+    align-items: center;
+    text-align: center;
+    padding: 2rem 5%;
   }
 
   .image-column {
-    order: -1;
-    margin-bottom: 20px; /* Add space below the image */
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  .content-column {
-    order: 1; /* Content goes below the image */
-    align-items: center; /* Center the content */
-    text-align: center; /* Center the text */
-    padding: 10px; /* Adjust padding */
+  .topButton {
+    align-self: center;
   }
 
-  .content-object {
-    font-size: 1.2rem; /* Adjust text size */
+  .Title {
+    text-align: center;
   }
 }
-
-
-
