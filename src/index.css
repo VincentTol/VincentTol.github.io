@@ -66,6 +66,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  
 }
 
 .content-object {
@@ -119,7 +120,6 @@ header {
   font-size: 2.5rem;
   font-weight: 700;
   color: #2d2d2d;
-  margin-bottom: 1rem;
   position: relative;
 }
 
@@ -130,6 +130,7 @@ header {
   height: 4px;
   background-color: #0077ff;
   margin-top: 0.5rem;
+  margin-bottom: 0rem;
   border-radius: 2px;
 }
 
@@ -141,12 +142,63 @@ header {
 }
 
 /* Projects Section */
-.regTitle {
-  font-size: 2rem;
+.ExpTitle {
+  font-size: 1.9rem;
   font-weight: 700;
   color: #2d2d2d;
-  text-align: center;
-  margin: 4rem 0 2rem;
+  text-align: left;
+}
+
+.ExpTitle.workPosition {
+  font-weight: 500;
+  color: rgb(74, 73, 73);
+}
+
+.ExpTitle.dates {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgb(74, 73, 73);
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.workItem {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  margin: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+
+  /* subtle inner gradient */
+  background: linear-gradient(135deg,
+    rgba(58, 227, 236, 0.18) 0%,
+    rgba(98, 131, 169, 0.1) 55%,
+    rgba(154, 85, 85, 0.06) 100%);
+
+  /* frosted effect on supported browsers */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /* thin hazy border */
+  border: 1px solid rgba(90,226,233,0.28);
+
+  /* soft shadow / glow */
+  box-shadow:
+    0 8px 20px rgba(0,119,255,0.08),   /* soft drop shadow */
+    0 2px 6px rgba(13,57,84,0.04);     /* subtle grounding shadow */
+
+  z-index: 0;
+}
+
+.companyLogo {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  /* Might need to fix later whats beign used to center logo  */
 }
 
 /* Project Tags */

@@ -1,4 +1,7 @@
 import headshot from '../images/headshot.jpg'
+import ukgLogo from '../images/ukg_logo.jpg'
+import arthrexLogo from '../images/arthrex_logo.jpg'
+import uniLogo from '../images/university_of_florida_innovation_academy_logo.jpg'
 
 function HomePage(){
     return(
@@ -21,6 +24,7 @@ function HomePage(){
         </nav>
         </header>
 
+        {/* Front page Resume and Linkedin and portfolio pic*/}
         <div className="content-container">
             <div className="content-column">
                 <h1 className="content-object">Hi, I'm Vincent,
@@ -41,25 +45,48 @@ function HomePage(){
         </div>
 
         <div className='content-container'>
+            {/* Experience Section */}
             <div className='content-column'>
                 <div className='Title'>
                     Experience
                 </div>
+                <div className="workItem">
+                    <img src={ukgLogo} alt="UKG logo" className="companyLogo" />
+                    <div className='content-column'>
+                        <div className='ExpTitle'>UKG <span className='ExpTitle workPosition'> Software Engineer Intern</span></div>
+                        <div className='ExpTitle dates'>Sunrise, FL | September 2025 - December 2025</div>
+                    </div>
+                </div>
+                <div className="workItem">
+                    <img src={arthrexLogo} alt="Arthrex logo" className="companyLogo" />
+                    <div className='content-column'>
+                        <div className='ExpTitle'>Arthrex <span className='ExpTitle workPosition'> Software Engineer Intern</span></div>
+                        <div className='ExpTitle dates'>Naples, FL | May 2025 - August 2025</div>
+                    </div>
+                </div>
+                <div className="workItem">
+                    <img src={uniLogo} alt="UF logo" className="companyLogo" />
+                    <div className='content-column'>
+                        <div className='ExpTitle'>University of Florida<span className='ExpTitle workPosition'> Web Developer</span></div>
+                        <div className='ExpTitle dates'>Gainesville, FL | May 2024 - May 2025</div>
+                    </div>
+                </div>
             </div>
+            {/* Image column to hold photos */}
             <div className='image-column'>
-                <img src = {headshot} alt= "Vincent's headshot"/>
             </div>
         </div>
 
-
-        <div style={{ margin: '80px' }}> </div>
-        <div className='regTitle'>What I've been working On...</div>
-
-        <div className="flexContainerRow">
-            <p className="projectObject">React</p>
-            <p className="projectObject">MySQL</p>
-            <p className="projectObject">Video/Audio Communication</p>
-            <p className="projectObject">Web Development</p>
+        <div className='content-container'>
+            <div className='Title'>What I've been working On...</div>
+            <div className="flexContainerRow">
+                <p className="projectObject">Angular</p>
+                <p className="projectObject">ASP.NET</p>
+                <p className="projectObject">Azure</p>
+                <p className="projectObject">Web Development</p>
+                <p className="projectObject">Unity</p>
+                <p className="projectObject">SQL</p>
+            </div>
         </div>
     </div>
     );
