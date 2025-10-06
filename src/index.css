@@ -8,6 +8,18 @@ body {
   line-height: 1.6;
 }
 
+/* Make sizing predictable to avoid overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* guard against small overflow while you fix layout causes */
+}
+
 /* Header and Navigation */
 header {
   position: sticky;
@@ -28,12 +40,13 @@ header {
   font-size: 1.8rem;
   margin: 0;
   color: #2d2d2d;
+  margin: 0.5rem;
 }
 
 .rightNav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
 }
@@ -62,7 +75,6 @@ header {
 
 .content-column {
   flex: 1;
-  min-width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -103,7 +115,7 @@ header {
   border: none;
   border-radius: 10px;
   font-size: 1rem;
-  margin-top: 10px;
+  margin-top: 0.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 600;
@@ -165,31 +177,34 @@ header {
 .workItem {
   position: relative;
   display: flex;
-  gap: 12px;
+  align-items: center; /* center logo + text vertically */
+  gap: 0.7rem;
   margin: 0.5rem;
   padding: 0.75rem;
   border-radius: 12px;
 
-  /* subtle inner gradient */
+  /* ocean-blue inner gradient (teal -> sky) */
   background: linear-gradient(135deg,
-    rgba(58, 227, 236, 0.18) 0%,
-    rgba(98, 131, 169, 0.1) 55%,
-    rgba(154, 85, 85, 0.06) 100%);
+    rgba(4, 108, 143, 0.22) 0%,
+    rgba(57, 10, 145, 0.14) 100%,
+    rgba(31, 4, 237, 0.06) 100%);
 
-  /* frosted effect on supported browsers */
+  /* frosted effect */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
-  /* thin hazy border */
-  border: 1px solid rgba(90,226,233,0.28);
+  /* ocean-blue hazy border */
+  border: 1px solid rgba(0,150,199,0.22);
 
-  /* soft shadow / glow */
+  /* soft ocean glow */
   box-shadow:
-    0 8px 20px rgba(0,119,255,0.08),   /* soft drop shadow */
-    0 2px 6px rgba(13,57,84,0.04);     /* subtle grounding shadow */
+    0 10px 30px rgba(0,150,199,0.12),
+    0 4px 10px rgba(0,105,148,0.06);
 
   z-index: 0;
 }
+
+
 
 .companyLogo {
   width: 5rem;
@@ -197,8 +212,7 @@ header {
   object-fit: cover;
   flex-shrink: 0;
   border-radius: 8px;
-  margin-top: 0.5rem;
-  /* Might need to fix later whats beign used to center logo  */
+  margin-top: 0; /* changed from 0.5rem */
 }
 
 /* Project Tags */
@@ -207,7 +221,7 @@ header {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 25px;
-  padding: 0 10%;
+  padding: 0 5%; /* reduced from 10% to avoid horizontal overflow on small screens */
 }
 
 .projectObject {
@@ -228,13 +242,30 @@ header {
   box-shadow: 0px 8px 20px rgba(0, 119, 255, 0.2);
 }
 
+
+
 /* Mobile */
 @media only screen and (max-width: 768px) {
+  header {
+    width: 100%;
+    padding: 12px 4%; /* slightly smaller, horizontal controlled by container */
+    box-sizing: border-box;
+  }
+
   .content-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 2rem 5%;
+  }
+
+  .content-column {
+    align-items: center; /* center child elements inside each column on mobile */
+  }
+
+  .flexContainerRow {
+    padding: 0 2%; /* further reduce padding on small phones */
+    gap: 12px;
   }
 
   .image-column {
@@ -244,9 +275,51 @@ header {
 
   .topButton {
     align-self: center;
+    padding: 1.5rem 1.5rem;
   }
 
   .Title {
+    font-size: 1.75rem;
     text-align: center;
+  }
+
+  .leftNav h1 {
+    font-size: 1rem;
+    margin: 0.5rem;
+    color: #2d2d2d;
+  }
+
+  .content-object {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    max-width: 550px;
+  }
+
+  .rightNav ul {
+    gap: 0.5rem;
+  }
+
+  .companyLogo {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 0;
+  }
+
+  .ExpTitle {
+    font-size: 1rem;
+  }
+
+  .ExpTitle.dates {
+    font-size: 0.9rem;
+  }
+
+  .ExpTitle.workPosition {
+    font-size: 1.1rem;
+  }
+
+  .projectObject {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
   }
 }
