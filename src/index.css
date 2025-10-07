@@ -111,14 +111,14 @@ header {
   align-self: flex-start;
   background-color: #0077ff;
   color: white;
-  padding: 2rem 2rem;
+  padding: 2.2rem 2.2rem;
   border: none;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-top: 0.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 600;
+  font-weight: 550;
 }
 
 .topButton:hover {
@@ -155,7 +155,7 @@ header {
 
 /* Projects Section */
 .ExpTitle {
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #2d2d2d;
   text-align: left;
@@ -167,21 +167,21 @@ header {
 }
 
 .ExpTitle.dates {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: rgb(74, 73, 73);
   margin-top: 5px;
-  margin-bottom: 20px;
 }
 
 .workItem {
   position: relative;
   display: flex;
-  align-items: center; /* center logo + text vertically */
-  gap: 0.7rem;
-  margin: 0.5rem;
+  align-items: flex-start; /* logo aligned to top of content so details expand under text */
+  gap: 12px;
+  margin: 0.5rem 0;
   padding: 0.75rem;
   border-radius: 12px;
+  box-sizing: border-box;
 
   /* ocean-blue inner gradient (teal -> sky) */
   background: linear-gradient(135deg,
@@ -215,13 +215,82 @@ header {
   margin-top: 0; /* changed from 0.5rem */
 }
 
+/* new inner content wrapper so we can control shrink/wrap behavior */
+.workItem .workContent {
+  flex: 1 1 auto;
+  min-width: 0; /* allow content to shrink on small screens */
+  display: flex;
+  flex-direction: column;
+}
+
+.workContent .workHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* button to the right */
+  gap: 0.75rem;
+}
+
+.workContent .titleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* small round expand button */
+.expandBtn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  background: #0077ff;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* actions wrapper (keeps layout tidy) */
+.workActions {
+  margin-top: 6px;
+}
+
+/* collapsible panel */
+.detailsPanel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.28s ease, opacity 0.2s ease;
+  margin-top: 0;
+}
+
+.detailsPanel.open {
+  max-height: 400px; /* large enough for a few bullets; adjust as needed */
+  opacity: 1;
+  margin-top: 8px;
+}
+
+.detailsPanel ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.detailsPanel li {
+  margin-bottom: 0.25rem;
+  color: #3d4042;
+  font-size: 0.95rem;
+}
+
 /* Project Tags */
 .flexContainerRow {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 25px;
-  padding: 0 5%; /* reduced from 10% to avoid horizontal overflow on small screens */
 }
 
 .projectObject {
@@ -242,7 +311,33 @@ header {
   box-shadow: 0px 8px 20px rgba(0, 119, 255, 0.2);
 }
 
+.techList {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
 
+.techTag {
+  background: rgba(0,150,199,0.12); /* ocean-blue background */
+  color: #0077ff;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ensure long text wraps inside workItem instead of overflowing */
+.workItem {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.workItem .content-column {
+  min-width: 0; /* allow flex child to shrink */
+}
 
 /* Mobile */
 @media only screen and (max-width: 768px) {
@@ -281,6 +376,10 @@ header {
   .Title {
     font-size: 1.75rem;
     text-align: center;
+  }
+  .techTag {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
   }
 
   .leftNav h1 {
@@ -322,4 +421,11 @@ header {
     padding: 1rem 1.5rem;
     font-size: 1rem;
   }
+}
+
+/* mobile tweaks */
+@media only screen and (max-width: 480px) {
+  .workItem { padding: 0.6rem; gap: 10px; }
+  .companyLogo { width: 3.5rem; height: 3.5rem; }
+  .expandBtn { width: 32px; height: 32px; font-size: 1rem; }
 }

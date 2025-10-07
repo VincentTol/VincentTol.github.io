@@ -1,7 +1,47 @@
+import React, { useState } from 'react';
 import headshot from '../images/headshot.jpg'
 import ukgLogo from '../images/ukg_logo.jpg'
 import arthrexLogo from '../images/arthrex_logo.jpg'
 import uniLogo from '../images/university_of_florida_innovation_academy_logo.jpg'
+
+function WorkItem({ logo, alt, company, position, dates, techs = [], details = [] }) {
+  const [open, setOpen] = useState(false);
+  const id = `details-${company.replace(/\s+/g, '')}`;
+
+  return (
+    <div className="workItem">
+      <img src={logo} alt={alt} className="companyLogo" />
+      <div className="workContent">
+        <div className="workHeader">
+          <div className="titleBlock">
+            <div className='ExpTitle'>{company} <span className='ExpTitle workPosition'>{position}</span></div>
+            <div className='ExpTitle dates'>{dates}</div>
+          </div>
+
+          <button
+            className="expandBtn"
+            aria-expanded={open}
+            aria-controls={id}
+            onClick={() => setOpen(prev => !prev)}
+            title={open ? 'Collapse details' : 'Expand details'}
+          >
+            {open ? '−' : '+'}
+          </button>
+        </div>
+
+        <div className="techList">
+          {techs.map((t) => <span key={t} className="techTag">{t}</span>)}
+        </div>
+
+        <div id={id} className={`detailsPanel ${open ? 'open' : ''}`} aria-hidden={!open}>
+          <ul>
+            {details.map((d, i) => <li key={i}>{d}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function HomePage(){
     return(
@@ -50,28 +90,49 @@ function HomePage(){
                 <div className='Title'>
                     Experience
                 </div>
-                <div className="workItem">
-                    <img src={ukgLogo} alt="UKG logo" className="companyLogo" />
-                    <div className='content-column'>
-                        <div className='ExpTitle'>UKG <span className='ExpTitle workPosition'> Software Engineer Intern</span></div>
-                        <div className='ExpTitle dates'>Sunrise, FL | September 2025 - December 2025</div>
-                    </div>
-                </div>
-                <div className="workItem">
-                    <img src={arthrexLogo} alt="Arthrex logo" className="companyLogo" />
-                    <div className='content-column'>
-                        <div className='ExpTitle'>Arthrex <span className='ExpTitle workPosition'> Software Engineer Intern</span></div>
-                        <div className='ExpTitle dates'>Naples, FL | May 2025 - August 2025</div>
-                    </div>
-                </div>
-                <div className="workItem">
-                    <img src={uniLogo} alt="UF logo" className="companyLogo" />
-                    <div className='content-column'>
-                        <div className='ExpTitle'>University of Florida<span className='ExpTitle workPosition'> Web Developer</span></div>
-                        <div className='ExpTitle dates'>Gainesville, FL | May 2024 - May 2025</div>
-                    </div>
-                </div>
+
+                <WorkItem
+                  logo={ukgLogo}
+                  alt="UKG logo"
+                  company="UKG"
+                  position="Software Engineer Intern"
+                  dates="Sunrise, FL | September 2025 - December 2025"
+                  techs={['C#', 'ASP.NET', 'Angular', 'SQL', 'Docker', 'Kubernetes']}
+                  details={[
+                    'Implemented feature X which improved Y by Z%',
+                    'Collaborated on microservices using ASP.NET Core and Docker',
+                    'Wrote integration tests and improved CI pipeline'
+                  ]}
+                />
+
+                <WorkItem
+                  logo={arthrexLogo}
+                  alt="Arthrex logo"
+                  company="Arthrex"
+                  position="Software Engineer Intern"
+                  dates="Naples, FL | May 2025 - August 2025"
+                  techs={['JavaScript', 'REST APIs', 'Node.JS']}
+                  details={[
+                    'Built REST API endpoints for internal tooling',
+                    'Optimized frontend load time using code-splitting',
+                    'Worked with product team to scoping features'
+                  ]}
+                />
+
+                <WorkItem
+                  logo={uniLogo}
+                  alt="UF logo"
+                  company="University of Florida"
+                  position="Web Developer"
+                  dates="Gainesville, FL | May 2024 - May 2025"
+                  techs={['HTML/CSS', 'JavaScript']}
+                  details={[
+                    'Maintained departmental website and content updates',
+                    'Implemented accessible components and responsive fixes'
+                  ]}
+                />
             </div>
+
             {/* Image column to hold photos */}
             <div className='image-column'>
             </div>
