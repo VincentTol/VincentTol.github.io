@@ -66,7 +66,7 @@ function HomePage(){
 
         {/* Front page Resume and Linkedin and portfolio pic*/}
         <div className="content-container">
-            <div className="content-column">
+        <div className="content-column">
                 <h1 className="content-object">Hi, I'm Vincent,
                     a Senior Computer Science student at the University of Florida enjoying learning and creating every day</h1>
                 <div className='flexContainerRow'>
@@ -86,7 +86,8 @@ function HomePage(){
 
         <div className='content-container'>
             {/* Experience Section */}
-            <div className='content-column'>
+            {/* Content column flex 2 to hold  twice as much space as image column*/}
+            <div className='content-column' style={{ flex: 2 }}>
                 <div className='Title'>
                     Experience
                 </div>
@@ -99,9 +100,9 @@ function HomePage(){
                   dates="Sunrise, FL | September 2025 - December 2025"
                   techs={['C#', 'ASP.NET', 'Angular', 'SQL', 'Docker', 'Kubernetes']}
                   details={[
-                    'Implemented feature X which improved Y by Z%',
-                    'Collaborated on microservices using ASP.NET Core and Docker',
-                    'Wrote integration tests and improved CI pipeline'
+                    'Developing a Full Stack Angular, Typescript, C#, ASP.net web app for Tax Lookup using a microservice architecture deployed with Kubernetes on Google Cloud. Integrated with ARCGIS for Tax Visualization.',
+                    'Improved REST APIs response time by 25% by refactoring inefficient controller methods',
+                    'Resolving tickets regarding Unit Testing, Quality Assurance, and tax code updates in Scrum team'
                   ]}
                 />
 
@@ -113,9 +114,9 @@ function HomePage(){
                   dates="Naples, FL | May 2025 - August 2025"
                   techs={['JavaScript', 'REST APIs', 'Node.JS']}
                   details={[
-                    'Built REST API endpoints for internal tooling',
-                    'Optimized frontend load time using code-splitting',
-                    'Worked with product team to scoping features'
+                    'Architected and developed a Full Stack JavaScript, HTML, Node.js application to control operating room audio systems, replacing legacy hardware and reducing hardware costs by over $2,200',
+                    'Reduced audio system latency by 80% by implementing WebSockets and a secure SSH connection',
+                    'Migrated touch panel software interface to a new REST API, enabling seamless transition of surgical video/audio hardware platforms and improving system compatibility and maintainability'
                   ]}
                 />
 
@@ -127,7 +128,7 @@ function HomePage(){
                   dates="Gainesville, FL | May 2024 - May 2025"
                   techs={['HTML/CSS', 'JavaScript']}
                   details={[
-                    'Maintained departmental website and content updates',
+                    'Built responsive web features for the University of Florida’s official website using HTML, CSS, and JavaScript',
                     'Implemented accessible components and responsive fixes'
                   ]}
                 />
