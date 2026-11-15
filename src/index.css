@@ -20,12 +20,22 @@ html, body {
   overflow-x: hidden; /* guard against small overflow while you fix layout causes */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.sectionAnchor {
+  scroll-margin-top: 110px; /* account for sticky header when jumping to anchors */
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
 /* Header and Navigation */
 header {
   position: sticky;
   top: 0;
   background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   padding: 20px 10%;
   z-index: 10;
 }
@@ -95,7 +105,7 @@ header {
   align-items: center;
   background: #e9ecef;
   border-radius: 20px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
 
@@ -183,23 +193,18 @@ header {
   border-radius: 12px;
   box-sizing: border-box;
 
-  /* ocean-blue inner gradient (teal -> sky) */
+  /* Keep the same look, but use less expensive paint effects for smooth scrolling */
   background: linear-gradient(135deg,
-    rgba(4, 108, 143, 0.22) 0%,
-    rgba(57, 10, 145, 0.14) 100%,
-    rgba(31, 4, 237, 0.06) 100%);
-
-  /* frosted effect */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+    rgba(3, 110, 146, 0.18) 0%,
+    rgba(14, 94, 189, 0.12) 100%);
 
   /* ocean-blue hazy border */
   border: 1px solid rgba(0,150,199,0.22);
 
-  /* soft ocean glow */
+  /* Lighter shadow reduces GPU pressure during scroll */
   box-shadow:
-    0 10px 30px rgba(0,150,199,0.12),
-    0 4px 10px rgba(0,105,148,0.06);
+    0 4px 14px rgba(0, 95, 140, 0.09),
+    0 2px 6px rgba(0, 85, 120, 0.05);
 
   z-index: 0;
 }

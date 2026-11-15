@@ -10,7 +10,15 @@ function WorkItem({ logo, alt, company, position, dates, techs = [], details = [
 
   return (
     <div className="workItem">
-      <img src={logo} alt={alt} className="companyLogo" />
+      <img
+        src={logo}
+        alt={alt}
+        className="companyLogo"
+        loading="lazy"
+        decoding="async"
+        width="80"
+        height="80"
+      />
       <div className="workContent">
         <div className="workHeader">
           <div className="titleBlock">
@@ -56,8 +64,8 @@ function HomePage(){
             </div>
             <div className="rightNav">
                 <ul className="navLinks">
-                    <li>Experience</li>
-                    <li>Projects</li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
                     <li><a href="https://github.com/VincentTol">GitHub</a></li>
                 </ul>
             </div>
@@ -80,11 +88,17 @@ function HomePage(){
 
             </div>
             <div className="image-column">
-                <img src = {headshot} alt= "Vincent's headshot"/>
+                <img
+                  src={headshot}
+                  alt="Vincent's headshot"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                />
             </div>
         </div>
 
-        <div className='content-container'>
+        <div id='experience' className='content-container sectionAnchor'>
             {/* Experience Section */}
             {/* Content column flex 2 to hold  twice as much space as image column*/}
             <div className='content-column' style={{ flex: 2 }}>
@@ -139,7 +153,7 @@ function HomePage(){
             </div>
         </div>
 
-        <div className='content-container'>
+        <div id='projects' className='content-container sectionAnchor'>
             <div className='Title'>What I've been working On...</div>
             <div className="flexContainerRow">
                 <p className="projectObject">Angular</p>

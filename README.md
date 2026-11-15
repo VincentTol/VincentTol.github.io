@@ -2,6 +2,81 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Updating The Website In Development
+
+Use these steps whenever you want to make and preview website updates locally.
+
+1. Install dependencies (first time only):
+
+```bash
+npm install
+```
+
+2. Start the development server:
+
+```bash
+npm start
+```
+
+3. Open [http://localhost:3000](http://localhost:3000).
+
+4. Edit the source files in `src/`.
+
+- Main app wrapper: `src/App.jsx`
+- Home page content/layout: `src/Pages/Homepage.jsx`
+- Global styles: `src/index.css`
+- App styles: `src/App.css`
+- Images/assets: `src/images/`
+
+5. Save your changes. The page will auto-reload.
+
+6. Run tests (optional but recommended):
+
+```bash
+npm test
+```
+
+7. Create a production build before deployment:
+
+```bash
+npm run build
+```
+
+The optimized files will be generated in the `build/` folder.
+
+## Deploy To GitHub Pages
+
+This project is already configured for GitHub Pages with:
+
+- `homepage` in `package.json`
+- `predeploy` script: `npm run build`
+- `deploy` script: `gh-pages -d build`
+
+To publish your latest changes:
+
+1. Commit your updates to your main branch:
+
+```bash
+git add .
+git commit -m "Update website content"
+git push origin main
+```
+
+2. Run the deploy command:
+
+```bash
+npm run deploy
+```
+
+3. Wait 1-3 minutes, then open:
+
+`https://vincenttol.github.io`
+
+Notes:
+
+- `npm run deploy` publishes the `build/` output to the `gh-pages` branch.
+- If the live site does not update immediately, hard refresh your browser (`Ctrl+F5`).
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,0 +1,5 @@
+How to remove node modules from git tracking
+Reason is because my master branch had node modules in tracking so even if in git ignore it still included it
+git rm -r --cached node_modules
+git add .gitignore
+git commit -m "Stop tracking node_modules"
